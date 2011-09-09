@@ -1,0 +1,231 @@
+﻿/*
+	AnythingSlider v1.7+ themes
+	Tabs Light theme
+*/
+
+/****************************
+ SET DEFAULT DIMENSIONS HERE
+ ****************************/
+/* Change the ID to match your slider */
+#slider {
+	width: 700px;
+	height: 390px;
+	list-style: none;
+}
+
+/* Opera width restriction */
+.anythingBase {
+	max-width: 32766px;
+	background: transparent;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/*************
+ ACTIVE STATE (slider has keyboard focus)
+ *************/
+/* slider window - top & bottom borders, active state */
+div.anythingSlider-tabs-light.activeSlider .anythingWindow {
+	border-color: #532f26;
+}
+div.anythingSlider-tabs-light.activeSlider .arrow a {
+	
+}
+div.anythingSlider-tabs-light.activeSlider .anythingControls {
+	
+}
+
+/*****************
+ DEFAULT STATE (no keyboard focus)
+ *****************/
+/* Overall Wrapper */
+div.anythingSlider-tabs-light {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 3px; /* adjust left/right padding here to move arrows towards or away from the center */
+}
+
+/* Panels/Slides */
+.anythingBase .panel {
+	background: transparent;
+	display: block;
+	overflow: hidden;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+/* Vertical panels */
+.anythingBase .panel.vertical {
+	float: none;
+}
+
+/* Slider window - top & bottom borders, default state */
+div.anythingSlider-tabs-light .anythingWindow {
+	border-top: 3px solid #2e1a15;
+	border-bottom: 3px solid #2e1a15;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+/* Arrow buttons position */
+div.anythingSlider-tabs-light .arrow {
+	top: 50%;
+	position: absolute;
+	display: block;
+}
+div.anythingSlider-tabs-light span.back {
+	left: 0;
+}
+div.anythingSlider-tabs-light span.forward {
+	right: 0;
+}
+/* Arrow buttons images */
+div.anythingSlider-tabs-light .arrow a {
+	display: block;
+	background: transparent url(../images/tabs-light.png) no-repeat left top;
+	height: 69px;
+	width: 38px;
+	text-align: center;
+	text-decoration: none;
+	outline: 0;
+	margin: -34px 0 0; /* set to 1/2 height */
+}
+div.anythingSlider-tabs-light .forward a {
+	background-position: right top;
+}
+div.anythingSlider-tabs-light .back a:hover,
+div.anythingSlider-tabs-light .back a.hover {
+	background-position: left bottom;
+}
+div.anythingSlider-tabs-light .forward a:hover,
+div.anythingSlider-tabs-light .forward a.hover {
+	background-position: right bottom;
+}
+
+/* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
+div.anythingSlider-tabs-light .back.disabled,
+div.anythingSlider-tabs-light .forward.disabled {
+	display: none;
+}
+
+/* Navigation tabs - Slider control block */
+div.anythingSlider-tabs-light .anythingControls {
+	outline: 0;
+	float: left;
+	position: absolute;
+	bottom: -8px;
+	left: 5px;
+	z-index: 100;
+	width: 95%;
+}
+
+/* control list */
+div.anythingSlider-tabs-light .anythingControls ul {
+	float: left;
+	margin: 0;
+	padding: 0;
+	z-index: 100;
+}
+/* control tabs */
+div.anythingSlider-tabs-light .anythingControls ul li {
+	display: block;
+	float: left;
+	margin: 0 0 0 4px;
+}
+/* control links */
+div.anythingSlider-tabs-light .anythingControls ul a,
+div.anythingSlider-tabs-light a.start-stop {
+	display: block;
+	background: transparent url(../images/tabs-light2.png) no-repeat left bottom; /* default tab, active/inactive slider */
+	color: #777;
+	font-size: 14px;
+	text-decoration: none;
+	height: 26px;
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+div.anythingSlider-tabs-light .anythingControls ul a:hover,
+div.anythingSlider-tabs-light .anythingControls ul a.hover {
+	color: #3b86b1;
+	background-position: left top;
+}
+div.anythingSlider-tabs-light .anythingControls ul a span,
+div.anythingSlider-tabs-light a.start-stop span {
+	display: block;
+	background: transparent url(../images/tabs-light2.png) no-repeat right bottom;
+	height: 26px;
+	padding: 0 18px 0 0;
+	position: relative;
+	margin: 0 0 0 5px;
+	left: 13px;
+	top: 0;
+}
+/* control nav window (navigationSize = true) */
+div.anythingSlider-tabs-light .anythingControls .anythingNavWindow {
+	margin: 0 10px;
+	overflow: hidden;
+	float: left;
+}
+div.anythingSlider-tabs-light .anythingControls ul a.hover span,
+div.anythingSlider-tabs-light .anythingControls ul a:hover span {
+	background-position: right top;
+}
+div.anythingSlider-tabs-light .anythingControls ul a.cur,
+div.anythingSlider-tabs-light .anythingControls ul a.cur:hover {
+	color: #3b86b1;
+	background-position: left top;
+}
+div.anythingSlider-tabs-light .anythingControls ul a.cur span,
+div.anythingSlider-tabs-light .anythingControls ul a.cur:hover span {
+	background-position: right top;
+}
+
+/* Start/stop button - stopped */
+div.anythingSlider-tabs-light .start-stop {
+	float: right;
+}
+
+/* Start/stop button - stopped */
+div.anythingSlider-tabs-light .start-stop:hover,
+div.anythingSlider-tabs-light .start-stop.hover {
+	background-position: left top;
+}
+div.anythingSlider-tabs-light .start-stop:hover span,
+div.anythingSlider-tabs-light .start-stop.hover span {
+	background-position: right top;
+}
+/* start/stop button - playing */
+div.anythingSlider-tabs-dark .start-stop.playing {}
+div.anythingSlider-tabs-light .start-stop.playing:hover,
+div.anythingSlider-tabs-light .start-stop.playing.hover {}
+
+/* Navigation size window arrows */
+div.anythingSlider-tabs-light .anythingControls li.next a span, div.anythingSlider-tabs-light .anythingControls li.prev a span {
+	
+}
+div.anythingSlider-tabs-light .anythingControls li.prev a, div.anythingSlider-tabs-light .anythingControls li.next a {
+	color: #111;
+}
+div.anythingSlider-tabs-light .anythingControls li.next a:hover, div.anythingSlider-tabs-light .anythingControls li.prev a:hover {
+	color: #000;
+}
+
+div.anythingSlider-tabs-light .anythingNavWindow .thumbNav { width: 200% !important; }
+
+/***********************
+  COMMON SLIDER STYLING
+ ***********************/
+/* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
+div.anythingSlider-tabs-light .arrow a span {
+	display: block;
+	line-height: 1px; /* needed for IE7 */
+	width: 0;
+	text-indent: -9999px;
+}

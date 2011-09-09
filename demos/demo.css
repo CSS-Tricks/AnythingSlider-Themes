@@ -1,0 +1,38 @@
+﻿/* AnythingSlider Themese demo */
+body               { background: #ddd; color: #333; font-size: 16px; }
+a:link             { color: #08f; text-decoration: none; }
+a:hover            { color: #f80; }
+
+.dark          { color: #ddd; }
+.dark a:link   { color: #fc0; }
+.dark a:hover  { color: #ddd; }
+
+#nav               { display: block; width: auto; margin: 10px auto; text-align: center; white-space: nowrap; line-height: 3em; }
+#nav a             { text-align: center; background: black; color: white; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 10px; }
+#nav a.git         { background: #006; }
+#nav a.issue       { background: #600; }
+#nav a:hover,
+#nav a.current     { background: #666; }
+
+h1                 { text-align: center; font-family: 'Bowlby One SC', sans-serif; font-size: 250%; }
+
+.theme-list        { text-align: center; margin: 30px auto; }
+.theme-list div    { height: 35px; vertical-align: middle; } /* this silly css definition is needed for IE7 */
+.theme-list select { margin-bottom: 30px; }
+
+#wrap { margin-bottom: 5px; }
+
+/* Define slider dimensions here */
+#slider,
+#slider li,
+#slider img        { width: 700px; height: 390px; position: relative; }
+
+/* Top caption - padding is included in the width (680px here, 700px total width), same for height */
+.caption-top       { background: #000; color: #fff; padding: 10px; margin: 0; position: relative; z-index: 10; opacity: .8; filter: alpha(opacity=80); left: 0; top: 0; width: 680px; height: 30px; }
+
+/* Caption close button */
+.close             { font-size: 80%; cursor: pointer; float: right; display: inline-block; }
+
+/* background color selector */
+#bkgd              { margin: 20px auto; width: 320px; }
+.block             { float: left; display: block; width: 20px; height: 20px; }
