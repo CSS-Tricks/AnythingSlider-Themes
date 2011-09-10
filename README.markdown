@@ -30,3 +30,14 @@ See them on the [AnythingSlider Theme Demo Page](http://mottie.github.com/Anythi
 
 * If you would like to fix a theme or contribute a new theme, then fork this repository, add your theme and send me a pull request.
 * Or you could just email me the files and I'll add it.
+
+### Change Log
+
+#### Version 1.1
+
+* Updated tabs-light and tabs-dark themes by removing the navigation width, the update to AnythingSlider (v1.7.12+) should better calculate the tab widths now.
+
+
+#### Version 1.0
+
+* Initial commit
