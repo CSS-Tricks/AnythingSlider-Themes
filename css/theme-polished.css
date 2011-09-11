@@ -11,6 +11,9 @@
 	width: 700px;
 	height: 390px;
 	list-style: none;
+	/* Prevent FOUC (see FAQ page) and keep things readable if javascript is disabled */
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 /* Opera width restriction */
@@ -23,6 +26,8 @@
 	left: 0;
 	margin: 0;
 	padding: 0;
+	/* override the #slider overflow above, once the class is added */
+	overflow: visible !important;
 }
 
 /*************
