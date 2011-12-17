@@ -73,6 +73,10 @@ See them on the [AnythingSlider Theme Demo Page](http://mottie.github.com/Anythi
 
 ## Change Log
 
+### Version 1.3
+
+* Updated css files to prevent problems with using the navigation in IE8, as per AnythingSlider [issue #206](https://github.com/ProLoser/AnythingSlider/issues/206). Even though it doesn't appear to be a problem, better to make the change anyway :P
+
 ### Version 1.2
 
 * Added overflow properties to every theme to prevent the flash of unstyled content (FOUC).

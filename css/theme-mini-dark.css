@@ -226,5 +226,5 @@ div.anythingSlider-mini-dark .arrow a span, div.anythingSlider-mini-dark .anythi
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
-	text-indent: -9999px;
+	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
 }
