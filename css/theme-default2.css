@@ -231,5 +231,5 @@ div.anythingSlider-default2 .arrow a span, div.anythingSlider-default2 .anything
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
-	text-indent: -9999px;
+	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
 }

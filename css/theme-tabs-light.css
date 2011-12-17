@@ -230,5 +230,5 @@ div.anythingSlider-tabs-light .arrow a span {
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
-	text-indent: -9999px;
+	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
 }
