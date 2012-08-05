@@ -1,6 +1,6 @@
 ﻿These are some additional themes I put together for [AnythingSlider](http://proloser.github.com/AnythingSlider/)
 
-See them on the [AnythingSlider Theme Demo Page](http://mottie.github.com/AnythingSlider-Themes/)
+See them on the [AnythingSlider Theme Demo Page](http://css-tricks.github.com/AnythingSlider-Themes/)
 
 ## Page Header
 
