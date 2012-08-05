@@ -1,6 +1,7 @@
 ﻿/*
 	AnythingSlider v1.7+ themes
 	Shiny theme
+	by Rob Garrison (aka Mottie)
 */
 
 /****************************
@@ -18,7 +19,6 @@
 
 /* Opera width restriction */
 .anythingBase {
-	max-width: 32766px;
 	background: transparent;
 	list-style: none;
 	position: absolute;
@@ -34,54 +34,67 @@
  ACTIVE STATE (slider has keyboard focus)
  *************/
 /* slider window - top & bottom borders, active state */
-div.anythingSlider-shiny.activeSlider .anythingWindow {
+.anythingSlider-shiny.activeSlider .anythingWindow {
 	border-color: #999;
 }
-div.anythingSlider-shiny.activeSlider .back a {
+.anythingSlider-shiny.activeSlider .back a {
 	background-position: left top;
 }
-div.anythingSlider-shiny.activeSlider .forward a {
+.anythingSlider-shiny.activeSlider .forward a {
 	background-position: right top;
 }
-div.anythingSlider-shiny .back a:hover,
-div.anythingSlider-shiny .back a.hover,
-div.anythingSlider-shiny.activeSlider .back a:hover,
-div.anythingSlider-shiny.activeSlider .back a.hover {
+.anythingSlider-shiny .back a:hover,
+.anythingSlider-shiny .back a.hover,
+.anythingSlider-shiny.activeSlider .back a:hover,
+.anythingSlider-shiny.activeSlider .back a.hover {
 	background-position: left -55px;
 }
-div.anythingSlider-shiny .forward a:hover,
-div.anythingSlider-shiny .forward a.hover,
-div.anythingSlider-shiny.activeSlider .forward a:hover,
-div.anythingSlider-shiny.activeSlider .forward a.hover {
+.anythingSlider-shiny .forward a:hover,
+.anythingSlider-shiny .forward a.hover,
+.anythingSlider-shiny.activeSlider .forward a:hover,
+.anythingSlider-shiny.activeSlider .forward a.hover {
 	background-position: right -55px;
 }
 /*****************
  DEFAULT STATE (no keyboard focus)
  *****************/
 /* Overall Wrapper */
-div.anythingSlider-shiny {
+.anythingSlider-shiny {
 	display: block;
 	position: relative;
 	margin: 0 auto;
 	padding: 0 27px; /* adjust left/right padding here to move arrows towards or away from the center */
 }
 
-/* Panels/Slides */
-.anythingBase .panel {
+/* all panels inside the slider; horizontal mode */
+.anythingSlider .panel {
 	background: transparent;
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-/* Vertical panels */
-.anythingBase .panel.vertical {
+/* vertical mode */
+.anythingSlider .vertical .panel {
 	float: none;
 }
 
+/* fade mode */
+.anythingSlider .fade .panel {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+/* fade mode active page - visible & on top */
+.anythingSlider .fade .activePage {
+	z-index: 0;
+}
+
 /* Slider window - top & bottom borders, default state */
-div.anythingSlider-shiny .anythingWindow {
+.anythingSlider-shiny .anythingWindow {
 	border: 0;
 	overflow: hidden;
 	position: relative;
@@ -89,19 +102,19 @@ div.anythingSlider-shiny .anythingWindow {
 	height: 100%;
 }
 /* Arrow buttons position */
-div.anythingSlider-shiny .arrow {
+.anythingSlider-shiny .arrow {
 	top: 50%;
 	position: absolute;
 	display: block;
 }
-div.anythingSlider-shiny span.back {
+.anythingSlider-shiny span.back {
 	left: 0;
 }
-div.anythingSlider-shiny span.forward {
+.anythingSlider-shiny span.forward {
 	right: 0;
 }
 /* Arrow buttons images */
-div.anythingSlider-shiny .arrow a {
+.anythingSlider-shiny .arrow a {
 	display: block;
 	background: transparent url(../images/shiny.png) no-repeat;
 	height: 55px;
@@ -111,21 +124,21 @@ div.anythingSlider-shiny .arrow a {
 	outline: 0;
 	margin: -27px 0 0; /* set to 1/2 height */
 }
-div.anythingSlider-shiny .back a {
+.anythingSlider-shiny .back a {
 	background-position: left -111px;
 }
-div.anythingSlider-shiny .forward a {
+.anythingSlider-shiny .forward a {
 	background-position: right -111px;
 }
 
 /* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
-div.anythingSlider-shiny .back.disabled,
-div.anythingSlider-shiny .forward.disabled {
+.anythingSlider-shiny .back.disabled,
+.anythingSlider-shiny .forward.disabled {
 	display: none;
 }
 
 /* Navigation tabs - Slider control block */
-div.anythingSlider-shiny .anythingControls {
+.anythingSlider-shiny .anythingControls {
 	outline: 0;
 	float: right;
 	position: absolute;
@@ -136,19 +149,19 @@ div.anythingSlider-shiny .anythingControls {
 	filter: alpha(opacity=90);
 }
 /* control list */
-div.anythingSlider-shiny .anythingControls ul {
+.anythingSlider-shiny .anythingControls ul {
 	float: left;
 	margin: 0;
 	padding: 0;
 	z-index: 100;
 }
 /* control tabs */
-div.anythingSlider-shiny .anythingControls ul li {
+.anythingSlider-shiny .anythingControls ul li {
 	display: block;
 	float: left;
 }
 /* control links */
-div.anythingSlider-shiny .anythingControls ul a {
+.anythingSlider-shiny .anythingControls ul a {
 	display: block;
 	background: transparent url(../images/shiny.png) no-repeat -1px -167px; /* default tab, active/inactive slider */
 	text-decoration: none;
@@ -159,23 +172,23 @@ div.anythingSlider-shiny .anythingControls ul a {
 	outline: 0;
 }
 /* control nav window (navigationSize = true) */
-div.anythingSlider-shiny .anythingControls .anythingNavWindow {
+.anythingSlider-shiny .anythingControls .anythingNavWindow {
 	overflow: hidden;
 	float: left;
 }
-div.anythingSlider-shiny .anythingControls ul a.hover,
-div.anythingSlider-shiny .anythingControls ul a:hover {
+.anythingSlider-shiny .anythingControls ul a.hover,
+.anythingSlider-shiny .anythingControls ul a:hover {
 	background-position: -14px -167px;
 }
-div.anythingSlider-shiny .anythingControls ul a.cur {
+.anythingSlider-shiny .anythingControls ul a.cur {
 	background-position: -27px -167px;
 }
-div.anythingSlider-shiny .anythingControls ul a.cur:hover {
+.anythingSlider-shiny .anythingControls ul a.cur:hover {
 	background-position: -40px -167px;
 }
 
 /* Start/stop button - stopped */
-div.anythingSlider-shiny .start-stop {
+.anythingSlider-shiny .start-stop {
 	background: transparent url(../images/shiny.png) no-repeat -53px -167px;
 	color: #ddd;
 	width: 14px;
@@ -187,29 +200,29 @@ div.anythingSlider-shiny .start-stop {
 	margin: 0 0 0 3px;
 }
 /* Start/stop button - stopped */
-div.anythingSlider-shiny .start-stop:hover,
-div.anythingSlider-shiny .start-stop.hover {
+.anythingSlider-shiny .start-stop:hover,
+.anythingSlider-shiny .start-stop.hover {
 	background-position: -66px -167px;
 }
 /* start/stop button - playing */
-div.anythingSlider-shiny .start-stop.playing {
+.anythingSlider-shiny .start-stop.playing {
 	background-position: -79px -167px;
 }
-div.anythingSlider-shiny .start-stop.playing:hover,
-div.anythingSlider-shiny .start-stop.playing.hover {
+.anythingSlider-shiny .start-stop.playing:hover,
+.anythingSlider-shiny .start-stop.playing.hover {
 	background-position: -92px -167px;
 }
 
 /* Navigation size window arrows */
-div.anythingSlider-shiny .anythingControls li.next a span, div.anythingSlider-shiny .anythingControls li.prev a span {
+.anythingSlider-shiny .anythingControls li.next a span, .anythingSlider-shiny .anythingControls li.prev a span {
 	text-indent: 1px;
 	padding: 6px 0 0 4px;
 	font-size: 8px;
 }
-div.anythingSlider-shiny .anythingControls li.prev a, div.anythingSlider-shiny .anythingControls li.next a {
+.anythingSlider-shiny .anythingControls li.prev a, .anythingSlider-shiny .anythingControls li.next a {
 	color: #ddd;
 }
-div.anythingSlider-shiny .anythingControls li.next a:hover, div.anythingSlider-shiny .anythingControls li.prev a:hover {
+.anythingSlider-shiny .anythingControls li.next a:hover, .anythingSlider-shiny .anythingControls li.prev a:hover {
 	color: #000;
 }
 
@@ -217,9 +230,33 @@ div.anythingSlider-shiny .anythingControls li.next a:hover, div.anythingSlider-s
   COMMON SLIDER STYLING
  ***********************/
 /* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
-div.anythingSlider-shiny .arrow a span, div.anythingSlider-shiny .anythingControls ul a span, div.anythingSlider-shiny .start-stop span {
+.anythingSlider-shiny .arrow a span, .anythingSlider-shiny .anythingControls ul a span, .anythingSlider-shiny .start-stop span {
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
 	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
 }
+/* AnythingSlider IE7 and older styling */
+.as-oldie div.anythingSlider .arrow {
+	margin: 0;
+}
+/* When using the navigationSize option, the side margins need to be zero
+   None of the navigation panels look good in IE7 now =( */
+.as-oldie div.anythingSlider .anythingControls {
+	margin: 0 0 0 30px;
+}
+}.as-oldie div.anythingSlider .anythingControls ul.thumbNav a {
+	margin: 0 0 0 2px;
+}
+.as-oldie div.anythingSlider .anythingControls .anythingNavWindow li {
+	padding: 3px 0 0 0;
+}
+.as-oldie div.anythingSlider .anythingControls {
+	display: block;
+	width: 95%; /* arbitrary percentage, adjust to fit your slider in IE7 */
+	margin: 0;
+}
+.as-oldie .anythingSlider-shiny .anythingControls {
+	width: 85%;
+}
+

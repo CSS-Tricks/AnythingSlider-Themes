@@ -1,6 +1,7 @@
 ﻿/*
 	AnythingSlider v1.7+ themes
 	Tabs Light theme
+	by Rob Garrison (aka Mottie)
 */
 
 /****************************
@@ -16,9 +17,7 @@
 	overflow-x: hidden;
 }
 
-/* Opera width restriction */
 .anythingBase {
-	max-width: 32766px;
 	background: transparent;
 	list-style: none;
 	position: absolute;
@@ -34,13 +33,13 @@
  ACTIVE STATE (slider has keyboard focus)
  *************/
 /* slider window - top & bottom borders, active state */
-div.anythingSlider-tabs-light.activeSlider .anythingWindow {
+.anythingSlider-tabs-light.activeSlider .anythingWindow {
 	border-color: #532f26;
 }
-div.anythingSlider-tabs-light.activeSlider .arrow a {
+.anythingSlider-tabs-light.activeSlider .arrow a {
 	
 }
-div.anythingSlider-tabs-light.activeSlider .anythingControls {
+.anythingSlider-tabs-light.activeSlider .anythingControls {
 	
 }
 
@@ -48,29 +47,42 @@ div.anythingSlider-tabs-light.activeSlider .anythingControls {
  DEFAULT STATE (no keyboard focus)
  *****************/
 /* Overall Wrapper */
-div.anythingSlider-tabs-light {
+.anythingSlider-tabs-light {
 	display: block;
 	position: relative;
 	margin: 0 auto;
 	padding: 0 3px; /* adjust left/right padding here to move arrows towards or away from the center */
 }
 
-/* Panels/Slides */
-.anythingBase .panel {
+/* all panels inside the slider; horizontal mode */
+.anythingSlider .panel {
 	background: transparent;
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-/* Vertical panels */
-.anythingBase .panel.vertical {
+/* vertical mode */
+.anythingSlider .vertical .panel {
 	float: none;
 }
 
+/* fade mode */
+.anythingSlider .fade .panel {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+/* fade mode active page - visible & on top */
+.anythingSlider .fade .activePage {
+	z-index: 0;
+}
+
 /* Slider window - top & bottom borders, default state */
-div.anythingSlider-tabs-light .anythingWindow {
+.anythingSlider-tabs-light .anythingWindow {
 	border-top: 3px solid #2e1a15;
 	border-bottom: 3px solid #2e1a15;
 	overflow: hidden;
@@ -79,19 +91,19 @@ div.anythingSlider-tabs-light .anythingWindow {
 	height: 100%;
 }
 /* Arrow buttons position */
-div.anythingSlider-tabs-light .arrow {
+.anythingSlider-tabs-light .arrow {
 	top: 50%;
 	position: absolute;
 	display: block;
 }
-div.anythingSlider-tabs-light span.back {
+.anythingSlider-tabs-light span.back {
 	left: 0;
 }
-div.anythingSlider-tabs-light span.forward {
+.anythingSlider-tabs-light span.forward {
 	right: 0;
 }
 /* Arrow buttons images */
-div.anythingSlider-tabs-light .arrow a {
+.anythingSlider-tabs-light .arrow a {
 	display: block;
 	background: transparent url(../images/tabs-light.png) no-repeat left top;
 	height: 69px;
@@ -101,26 +113,26 @@ div.anythingSlider-tabs-light .arrow a {
 	outline: 0;
 	margin: -34px 0 0; /* set to 1/2 height */
 }
-div.anythingSlider-tabs-light .forward a {
+.anythingSlider-tabs-light .forward a {
 	background-position: right top;
 }
-div.anythingSlider-tabs-light .back a:hover,
-div.anythingSlider-tabs-light .back a.hover {
+.anythingSlider-tabs-light .back a:hover,
+.anythingSlider-tabs-light .back a.hover {
 	background-position: left bottom;
 }
-div.anythingSlider-tabs-light .forward a:hover,
-div.anythingSlider-tabs-light .forward a.hover {
+.anythingSlider-tabs-light .forward a:hover,
+.anythingSlider-tabs-light .forward a.hover {
 	background-position: right bottom;
 }
 
 /* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
-div.anythingSlider-tabs-light .back.disabled,
-div.anythingSlider-tabs-light .forward.disabled {
+.anythingSlider-tabs-light .back.disabled,
+.anythingSlider-tabs-light .forward.disabled {
 	display: none;
 }
 
 /* Navigation tabs - Slider control block */
-div.anythingSlider-tabs-light .anythingControls {
+.anythingSlider-tabs-light .anythingControls {
 	outline: 0;
 	float: left;
 	position: absolute;
@@ -131,21 +143,21 @@ div.anythingSlider-tabs-light .anythingControls {
 }
 
 /* control list */
-div.anythingSlider-tabs-light .anythingControls ul {
+.anythingSlider-tabs-light .anythingControls ul {
 	float: left;
 	margin: 0;
 	padding: 0;
 	z-index: 100;
 }
 /* control tabs */
-div.anythingSlider-tabs-light .anythingControls ul li {
+.anythingSlider-tabs-light .anythingControls ul li {
 	display: block;
 	float: left;
 	margin: 0 0 0 4px;
 }
 /* control links */
-div.anythingSlider-tabs-light .anythingControls ul a,
-div.anythingSlider-tabs-light a.start-stop {
+.anythingSlider-tabs-light .anythingControls ul a,
+.anythingSlider-tabs-light a.start-stop {
 	display: block;
 	background: transparent url(../images/tabs-light2.png) no-repeat left bottom; /* default tab, active/inactive slider */
 	color: #777;
@@ -156,13 +168,13 @@ div.anythingSlider-tabs-light a.start-stop {
 	padding: 0;
 	outline: 0;
 }
-div.anythingSlider-tabs-light .anythingControls ul a:hover,
-div.anythingSlider-tabs-light .anythingControls ul a.hover {
+.anythingSlider-tabs-light .anythingControls ul a:hover,
+.anythingSlider-tabs-light .anythingControls ul a.hover {
 	color: #3b86b1;
 	background-position: left top;
 }
-div.anythingSlider-tabs-light .anythingControls ul a span,
-div.anythingSlider-tabs-light a.start-stop span {
+.anythingSlider-tabs-light .anythingControls ul a span,
+.anythingSlider-tabs-light a.start-stop span {
 	display: block;
 	background: transparent url(../images/tabs-light2.png) no-repeat right bottom;
 	height: 26px;
@@ -173,52 +185,52 @@ div.anythingSlider-tabs-light a.start-stop span {
 	top: 0;
 }
 /* control nav window (navigationSize = true) */
-div.anythingSlider-tabs-light .anythingControls .anythingNavWindow {
+.anythingSlider-tabs-light .anythingControls .anythingNavWindow {
 	margin: 0 10px;
 	overflow: hidden;
 	float: left;
 }
-div.anythingSlider-tabs-light .anythingControls ul a.hover span,
-div.anythingSlider-tabs-light .anythingControls ul a:hover span {
+.anythingSlider-tabs-light .anythingControls ul a.hover span,
+.anythingSlider-tabs-light .anythingControls ul a:hover span {
 	background-position: right top;
 }
-div.anythingSlider-tabs-light .anythingControls ul a.cur,
-div.anythingSlider-tabs-light .anythingControls ul a.cur:hover {
+.anythingSlider-tabs-light .anythingControls ul a.cur,
+.anythingSlider-tabs-light .anythingControls ul a.cur:hover {
 	color: #3b86b1;
 	background-position: left top;
 }
-div.anythingSlider-tabs-light .anythingControls ul a.cur span,
-div.anythingSlider-tabs-light .anythingControls ul a.cur:hover span {
+.anythingSlider-tabs-light .anythingControls ul a.cur span,
+.anythingSlider-tabs-light .anythingControls ul a.cur:hover span {
 	background-position: right top;
 }
 
 /* Start/stop button - stopped */
-div.anythingSlider-tabs-light .start-stop {
+.anythingSlider-tabs-light .start-stop {
 	float: right;
 }
 
 /* Start/stop button - stopped */
-div.anythingSlider-tabs-light .start-stop:hover,
-div.anythingSlider-tabs-light .start-stop.hover {
+.anythingSlider-tabs-light .start-stop:hover,
+.anythingSlider-tabs-light .start-stop.hover {
 	background-position: left top;
 }
-div.anythingSlider-tabs-light .start-stop:hover span,
-div.anythingSlider-tabs-light .start-stop.hover span {
+.anythingSlider-tabs-light .start-stop:hover span,
+.anythingSlider-tabs-light .start-stop.hover span {
 	background-position: right top;
 }
 /* start/stop button - playing */
-div.anythingSlider-tabs-dark .start-stop.playing {}
-div.anythingSlider-tabs-light .start-stop.playing:hover,
-div.anythingSlider-tabs-light .start-stop.playing.hover {}
+.anythingSlider-tabs-dark .start-stop.playing {}
+.anythingSlider-tabs-light .start-stop.playing:hover,
+.anythingSlider-tabs-light .start-stop.playing.hover {}
 
 /* Navigation size window arrows */
-div.anythingSlider-tabs-light .anythingControls li.next a span, div.anythingSlider-tabs-light .anythingControls li.prev a span {
+.anythingSlider-tabs-light .anythingControls li.next a span, .anythingSlider-tabs-light .anythingControls li.prev a span {
 	
 }
-div.anythingSlider-tabs-light .anythingControls li.prev a, div.anythingSlider-tabs-light .anythingControls li.next a {
+.anythingSlider-tabs-light .anythingControls li.prev a, .anythingSlider-tabs-light .anythingControls li.next a {
 	color: #111;
 }
-div.anythingSlider-tabs-light .anythingControls li.next a:hover, div.anythingSlider-tabs-light .anythingControls li.prev a:hover {
+.anythingSlider-tabs-light .anythingControls li.next a:hover, .anythingSlider-tabs-light .anythingControls li.prev a:hover {
 	color: #000;
 }
 
@@ -226,9 +238,30 @@ div.anythingSlider-tabs-light .anythingControls li.next a:hover, div.anythingSli
   COMMON SLIDER STYLING
  ***********************/
 /* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
-div.anythingSlider-tabs-light .arrow a span {
+.anythingSlider-tabs-light .arrow a span {
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
 	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
 }
+/* AnythingSlider IE7 and older styling */
+.as-oldie div.anythingSlider .arrow {
+	margin: 0;
+}
+/* When using the navigationSize option, the side margins need to be zero
+   None of the navigation panels look good in IE7 now =( */
+.as-oldie div.anythingSlider .anythingControls {
+	margin: 0 0 0 30px;
+}
+}.as-oldie div.anythingSlider .anythingControls ul.thumbNav a {
+	margin: 0 0 0 2px;
+}
+.as-oldie div.anythingSlider .anythingControls .anythingNavWindow li {
+	padding: 3px 0 0 0;
+}
+.as-oldie div.anythingSlider .anythingControls {
+	display: block;
+	width: 95%; /* arbitrary percentage, adjust to fit your slider in IE7 */
+	margin: 0;
+}
+

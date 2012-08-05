@@ -22,10 +22,8 @@ h1                 { text-align: center; font-family: 'Bowlby One SC', sans-seri
 
 #wrap { margin-bottom: 5px; }
 
-/* Define slider dimensions here */
-#slider,
-#slider li,
-#slider img        { width: 700px; height: 390px; position: relative; }
+/* Define image dimensions here */
+#slider img        { width: 700px; height: 390px; }
 
 /* Top caption - padding is included in the width (680px here, 700px total width), same for height */
 .caption-top       { background: #000; color: #fff; padding: 10px; margin: 0; position: relative; z-index: 10; opacity: .8; filter: alpha(opacity=80); left: 0; top: 0; width: 680px; height: 30px; }

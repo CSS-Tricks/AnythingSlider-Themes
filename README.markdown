@@ -73,6 +73,12 @@ See them on the [AnythingSlider Theme Demo Page](http://mottie.github.com/Anythi
 
 ## Change Log
 
+### Version 1.4
+
+* Removed max-width from css as the latest version of Opera (11.60+) no longer appears to have that limitation.
+* Updated to work with AnythingSlider v1.8+ (fade mode)
+* Changed links to point to css-tricks
+
 ### Version 1.3
 
 * Updated css files to prevent problems with using the navigation in IE8, as per AnythingSlider [issue #206](https://github.com/ProLoser/AnythingSlider/issues/206). Even though it doesn't appear to be a problem, better to make the change anyway :P
@@ -85,7 +91,6 @@ See them on the [AnythingSlider Theme Demo Page](http://mottie.github.com/Anythi
 ### Version 1.1
 
 * Updated tabs-light and tabs-dark themes by removing the navigation width, the update to AnythingSlider (v1.7.12+) should better calculate the tab widths now.
-
 
 ### Version 1.0
 
