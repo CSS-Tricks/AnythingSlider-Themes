@@ -1,12 +1,11 @@
 ﻿/*
-	AnythingSlider v1.7+ themes
-	Mini Dark theme
+	AnythingSlider v1.8+ Mini Dark theme
+	by Rob Garrison (aka Mottie)
 */
-
 /****************************
  SET DEFAULT DIMENSIONS HERE
  ****************************/
-/* Change the ID to match your slider */
+/* change the ID & dimensions to match your slider */
 #slider {
 	width: 700px;
 	height: 390px;
@@ -16,9 +15,8 @@
 	overflow-x: hidden;
 }
 
-/* Opera width restriction */
+/* anythingBase class added to the #slider above by the plugin */
 .anythingBase {
-	max-width: 32766px;
 	background: transparent;
 	list-style: none;
 	position: absolute;
@@ -34,11 +32,11 @@
  ACTIVE STATE (slider has keyboard focus)
  *************/
 /* slider window, active state */
-div.anythingSlider-mini-dark.activeSlider .arrow a {
+.anythingSlider-mini-dark.activeSlider .arrow a {
 	opacity: 0.90;
 	filter: alpha(opacity=90);
 }
-div.anythingSlider-mini-dark.activeSlider .anythingControls {
+.anythingSlider-mini-dark.activeSlider .anythingControls {
 	opacity: 0.90;
 	filter: alpha(opacity=90);
 }
@@ -47,29 +45,42 @@ div.anythingSlider-mini-dark.activeSlider .anythingControls {
  DEFAULT STATE (no keyboard focus)
  *****************/
 /* Overall Wrapper */
-div.anythingSlider-mini-dark {
+.anythingSlider-mini-dark {
 	display: block;
 	position: relative;
 	margin: 0 auto;
 	padding: 0; /* adjust left/right padding here to move arrows towards or away from the center */
 }
 
-/* Panels/Slides */
-.anythingBase .panel {
+/* all panels inside the slider; horizontal mode */
+.anythingSlider .panel {
 	background: transparent;
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-/* Vertical panels */
-.anythingBase .panel.vertical {
+/* vertical mode */
+.anythingSlider .vertical .panel {
 	float: none;
 }
 
+/* fade mode */
+.anythingSlider .fade .panel {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+/* fade mode active page - visible & on top */
+.anythingSlider .fade .activePage {
+	z-index: 0;
+}
+
 /* Slider window - top & bottom borders, default state */
-div.anythingSlider-mini-dark .anythingWindow {
+.anythingSlider-mini-dark .anythingWindow {
 	border: 0;
 	overflow: hidden;
 	position: relative;
@@ -77,19 +88,19 @@ div.anythingSlider-mini-dark .anythingWindow {
 	height: 100%;
 }
 /* Arrow buttons position */
-div.anythingSlider-mini-dark .arrow {
+.anythingSlider-mini-dark .arrow {
 	top: 50%;
 	position: absolute;
 	display: block;
 }
-div.anythingSlider-mini-dark span.back {
+.anythingSlider-mini-dark span.back {
 	left: 0;
 }
-div.anythingSlider-mini-dark span.forward {
+.anythingSlider-mini-dark span.forward {
 	right: 0;
 }
 /* Arrow buttons images */
-div.anythingSlider-mini-dark .arrow a {
+.anythingSlider-mini-dark .arrow a {
 	display: block;
 	background: transparent url(../images/mini-dark.png) no-repeat;
 	height: 42px;
@@ -101,33 +112,33 @@ div.anythingSlider-mini-dark .arrow a {
 	opacity: 0.60;
 	filter: alpha(opacity=60);
 }
-div.anythingSlider-mini-dark .arrow a:hover {
+.anythingSlider-mini-dark .arrow a:hover {
 	opacity: 0.90;
 	filter: alpha(opacity=90);
 }
-div.anythingSlider-mini-dark .back a {
+.anythingSlider-mini-dark .back a {
 	background-position: left top;
 }
-div.anythingSlider-mini-dark .forward a {
+.anythingSlider-mini-dark .forward a {
 	background-position: right top;
 }
-div.anythingSlider-mini-dark .back a:hover,
-div.anythingSlider-mini-dark .back a.hover {
+.anythingSlider-mini-dark .back a:hover,
+.anythingSlider-mini-dark .back a.hover {
 	background-position: left -43px;
 }
-div.anythingSlider-mini-dark .forward a:hover,
-div.anythingSlider-mini-dark .forward a.hover {
+.anythingSlider-mini-dark .forward a:hover,
+.anythingSlider-mini-dark .forward a.hover {
 	background-position: right -43px;
 }
 
 /* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
-div.anythingSlider-mini-dark .back.disabled,
-div.anythingSlider-mini-dark .forward.disabled {
+.anythingSlider-mini-dark .back.disabled,
+.anythingSlider-mini-dark .forward.disabled {
 	display: none;
 }
 
 /* Navigation tabs - Slider control block */
-div.anythingSlider-mini-dark .anythingControls {
+.anythingSlider-mini-dark .anythingControls {
 	outline: 0;
 	margin: 0 auto;
 	position: absolute;
@@ -137,24 +148,24 @@ div.anythingSlider-mini-dark .anythingControls {
 	opacity: 0.60;
 	filter: alpha(opacity=60);
 }
-div.anythingSlider-mini-dark .anythingControls:hover {
+.anythingSlider-mini-dark .anythingControls:hover {
 	opacity: 0.90;
 	filter: alpha(opacity=90);
 }
 /* control list */
-div.anythingSlider-mini-dark .anythingControls ul {
+.anythingSlider-mini-dark .anythingControls ul {
 	float: left;
 	margin: 0;
 	padding: 0;
 	z-index: 100;
 }
 /* control tabs */
-div.anythingSlider-mini-dark .anythingControls ul li {
+.anythingSlider-mini-dark .anythingControls ul li {
 	display: block;
 	float: left;
 }
 /* control links */
-div.anythingSlider-mini-dark .anythingControls ul a {
+.anythingSlider-mini-dark .anythingControls ul a {
 	display: block;
 	background: transparent url(../images/mini-dark.png) no-repeat left -85px; /* default tab, active/inactive slider */
 	text-decoration: none;
@@ -165,23 +176,23 @@ div.anythingSlider-mini-dark .anythingControls ul a {
 	outline: 0;
 }
 /* control nav window (navigationSize = true) */
-div.anythingSlider-mini-dark .anythingControls .anythingNavWindow {
+.anythingSlider-mini-dark .anythingControls .anythingNavWindow {
 	overflow: hidden;
 	float: left;
 }
-div.anythingSlider-mini-dark .anythingControls ul a.hover,
-div.anythingSlider-mini-dark .anythingControls ul a:hover {
+.anythingSlider-mini-dark .anythingControls ul a.hover,
+.anythingSlider-mini-dark .anythingControls ul a:hover {
 	background-position: left bottom;
 }
-div.anythingSlider-mini-dark .anythingControls ul a.cur {
+.anythingSlider-mini-dark .anythingControls ul a.cur {
 	background-position: -12px -85px;
 }
-div.anythingSlider-mini-dark .anythingControls ul a.cur:hover {
+.anythingSlider-mini-dark .anythingControls ul a.cur:hover {
 	background-position: -12px bottom;
 }
 
 /* Start/stop button - stopped */
-div.anythingSlider-mini-dark .start-stop {
+.anythingSlider-mini-dark .start-stop {
 	background: transparent url(../images/mini-dark.png) no-repeat -22px -85px;
 	color: #ddd;
 	width: 11px;
@@ -192,29 +203,29 @@ div.anythingSlider-mini-dark .start-stop {
 	outline: 0;
 }
 /* Start/stop button - stopped */
-div.anythingSlider-mini-dark .start-stop:hover,
-div.anythingSlider-mini-dark .start-stop.hover {
+.anythingSlider-mini-dark .start-stop:hover,
+.anythingSlider-mini-dark .start-stop.hover {
 	background-position: -22px bottom;
 }
 /* start/stop button - playing */
-div.anythingSlider-mini-dark .start-stop.playing {
+.anythingSlider-mini-dark .start-stop.playing {
 	background-position: right -85px;
 }
-div.anythingSlider-mini-dark .start-stop.playing:hover,
-div.anythingSlider-mini-dark .start-stop.playing.hover {
+.anythingSlider-mini-dark .start-stop.playing:hover,
+.anythingSlider-mini-dark .start-stop.playing.hover {
 	background-position: right bottom;
 }
 
 /* Navigation size window arrows */
-div.anythingSlider-mini-dark .anythingControls li.next a span, div.anythingSlider-mini-dark .anythingControls li.prev a span {
+.anythingSlider-mini-dark .anythingControls li.next a span, .anythingSlider-mini-dark .anythingControls li.prev a span {
 	text-indent: 1px;
 	padding: 4px 0 0 3px;
 	font-size: 8px;
 }
-div.anythingSlider-mini-dark .anythingControls li.prev a, div.anythingSlider-mini-dark .anythingControls li.next a {
+.anythingSlider-mini-dark .anythingControls li.prev a, .anythingSlider-mini-dark .anythingControls li.next a {
 	color: #ddd;
 }
-div.anythingSlider-mini-dark .anythingControls li.next a:hover, div.anythingSlider-mini-dark .anythingControls li.prev a:hover {
+.anythingSlider-mini-dark .anythingControls li.next a:hover, .anythingSlider-mini-dark .anythingControls li.prev a:hover {
 	color: #000;
 }
 
@@ -222,9 +233,30 @@ div.anythingSlider-mini-dark .anythingControls li.next a:hover, div.anythingSlid
   COMMON SLIDER STYLING
  ***********************/
 /* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
-div.anythingSlider-mini-dark .arrow a span, div.anythingSlider-mini-dark .anythingControls ul a span, div.anythingSlider-mini-dark .start-stop span {
+.anythingSlider-mini-dark .arrow a span, .anythingSlider-mini-dark .anythingControls ul a span, .anythingSlider-mini-dark .start-stop span {
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
 	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
+}
+
+/* AnythingSlider IE7 and older styling */
+.as-oldie div.anythingSlider .arrow {
+	margin: 0;
+}
+/* When using the navigationSize option, the side margins need to be zero
+   None of the navigation panels look good in IE7 now =( */
+.as-oldie div.anythingSlider .anythingControls {
+	margin: 0 0 0 30px;
+}
+}.as-oldie div.anythingSlider .anythingControls ul.thumbNav a {
+	margin: 0 0 0 2px;
+}
+.as-oldie div.anythingSlider .anythingControls .anythingNavWindow li {
+	padding: 3px 0 0 0;
+}
+.as-oldie div.anythingSlider .anythingControls {
+	display: block;
+	width: 95%; /* arbitrary percentage, adjust to fit your slider in IE7 */
+	margin: 0;
 }

@@ -1,6 +1,7 @@
 ﻿/*
 	AnythingSlider v1.7+ themes
 	Polished Aluminum theme
+	by Rob Garrison (aka Mottie)
 */
 
 /****************************
@@ -18,7 +19,6 @@
 
 /* Opera width restriction */
 .anythingBase {
-	max-width: 32766px;
 	background: transparent;
 	list-style: none;
 	position: absolute;
@@ -34,7 +34,7 @@
  ACTIVE STATE (slider has keyboard focus)
  *************/
 /* slider window - top & bottom borders, active state */
-div.anythingSlider-polished.activeSlider .anythingWindow {
+.anythingSlider-polished.activeSlider .anythingWindow {
 	border-color: #999;
 }
 
@@ -42,29 +42,42 @@ div.anythingSlider-polished.activeSlider .anythingWindow {
  DEFAULT STATE (no keyboard focus)
  *****************/
 /* Overall Wrapper */
-div.anythingSlider-polished {
+.anythingSlider-polished {
 	display: block;
 	position: relative;
 	margin: 0 auto;
 	padding: 0 4px; /* adjust left/right padding here to move arrows towards or away from the center */
 }
 
-/* Panels/Slides */
-.anythingBase .panel {
+/* all panels inside the slider; horizontal mode */
+.anythingSlider .panel {
 	background: transparent;
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-/* Vertical panels */
-.anythingBase .panel.vertical {
+/* vertical mode */
+.anythingSlider .vertical .panel {
 	float: none;
 }
 
+/* fade mode */
+.anythingSlider .fade .panel {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+/* fade mode active page - visible & on top */
+.anythingSlider .fade .activePage {
+	z-index: 0;
+}
+
 /* Slider window - top & bottom borders, default state */
-div.anythingSlider-polished .anythingWindow {
+.anythingSlider-polished .anythingWindow {
 	border-top: 3px solid #777;
 	border-bottom: 3px solid #777;
 	overflow: hidden;
@@ -73,19 +86,19 @@ div.anythingSlider-polished .anythingWindow {
 	height: 100%;
 }
 /* Arrow buttons position */
-div.anythingSlider-polished .arrow {
+.anythingSlider-polished .arrow {
 	top: 50%;
 	position: absolute;
 	display: block;
 }
-div.anythingSlider-polished span.back {
+.anythingSlider-polished span.back {
 	left: 0;
 }
-div.anythingSlider-polished span.forward {
+.anythingSlider-polished span.forward {
 	right: 0;
 }
 /* Arrow buttons images */
-div.anythingSlider-polished .arrow a {
+.anythingSlider-polished .arrow a {
 	display: block;
 	background: transparent url(../images/polished.png) no-repeat;
 	width: 32px;
@@ -95,29 +108,29 @@ div.anythingSlider-polished .arrow a {
 	outline: 0;
 	margin: -20px 0 0; /* set to 1/2 height */
 }
-div.anythingSlider-polished .back a {
+.anythingSlider-polished .back a {
 	background-position: left top;
 }
-div.anythingSlider-polished .forward a {
+.anythingSlider-polished .forward a {
 	background-position: right top;
 }
-div.anythingSlider-polished .back a:hover,
-div.anythingSlider-polished .back a.hover {
+.anythingSlider-polished .back a:hover,
+.anythingSlider-polished .back a.hover {
 	background-position: left -39px;
 }
-div.anythingSlider-polished .forward a:hover,
-div.anythingSlider-polished .forward a.hover {
+.anythingSlider-polished .forward a:hover,
+.anythingSlider-polished .forward a.hover {
 	background-position: right -39px;
 }
 
 /* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
-div.anythingSlider-polished .back.disabled,
-div.anythingSlider-polished .forward.disabled {
+.anythingSlider-polished .back.disabled,
+.anythingSlider-polished .forward.disabled {
 	display: none;
 }
 
 /* Navigation tabs - Slider control block */
-div.anythingSlider-polished .anythingControls {
+.anythingSlider-polished .anythingControls {
 	outline: 0;
 	float: right;
 	position: absolute;
@@ -126,19 +139,19 @@ div.anythingSlider-polished .anythingControls {
 	z-index: 100;
 }
 /* control list */
-div.anythingSlider-polished .anythingControls ul {
+.anythingSlider-polished .anythingControls ul {
 	float: left;
 	margin: 0;
 	padding: 0;
 	z-index: 100;
 }
 /* control tabs */
-div.anythingSlider-polished .anythingControls ul li {
+.anythingSlider-polished .anythingControls ul li {
 	display: block;
 	float: left;
 }
 /* control links */
-div.anythingSlider-polished .anythingControls ul a {
+.anythingSlider-polished .anythingControls ul a {
 	display: block;
 	background: transparent url(../images/polished.png) no-repeat left -80px; /* default tab, active/inactive slider */
 	text-decoration: none;
@@ -149,23 +162,23 @@ div.anythingSlider-polished .anythingControls ul a {
 	outline: 0;
 }
 /* control nav window (navigationSize = true) */
-div.anythingSlider-polished .anythingControls .anythingNavWindow {
+.anythingSlider-polished .anythingControls .anythingNavWindow {
 	overflow: hidden;
 	float: left;
 }
-div.anythingSlider-polished .anythingControls ul a.hover,
-div.anythingSlider-polished .anythingControls ul a:hover {
+.anythingSlider-polished .anythingControls ul a.hover,
+.anythingSlider-polished .anythingControls ul a:hover {
 	background-position: left -97px;
 }
-div.anythingSlider-polished .anythingControls ul a.cur {
+.anythingSlider-polished .anythingControls ul a.cur {
 	background-position: -17px -80px;
 }
-div.anythingSlider-polished .anythingControls ul a.cur:hover {
+.anythingSlider-polished .anythingControls ul a.cur:hover {
 	background-position: -17px -97px;
 }
 
 /* Start/stop button - stopped */
-div.anythingSlider-polished .start-stop {
+.anythingSlider-polished .start-stop {
 	background: transparent url(../images/polished.png) no-repeat -48px -80px;
 	color: #ddd;
 	width: 15px;
@@ -177,28 +190,28 @@ div.anythingSlider-polished .start-stop {
 	margin: 0 0 0 3px;
 }
 /* Start/stop button - stopped */
-div.anythingSlider-polished .start-stop:hover,
-div.anythingSlider-polished .start-stop.hover {
+.anythingSlider-polished .start-stop:hover,
+.anythingSlider-polished .start-stop.hover {
 	background-position: -48px -97px;
 }
 /* start/stop button - playing */
-div.anythingSlider-polished .start-stop.playing {
+.anythingSlider-polished .start-stop.playing {
 	background-position: -32px -80px;
 }
-div.anythingSlider-polished .start-stop.playing:hover,
-div.anythingSlider-polished .start-stop.playing.hover {
+.anythingSlider-polished .start-stop.playing:hover,
+.anythingSlider-polished .start-stop.playing.hover {
 	background-position: -32px -97px;
 }
 
 /* Navigation size window arrows */
-div.anythingSlider-polished .anythingControls li.next a span, div.anythingSlider-polished .anythingControls li.prev a span {
+.anythingSlider-polished .anythingControls li.next a span, .anythingSlider-polished .anythingControls li.prev a span {
 	text-indent: 1px;
 	padding: 6px 0 0 4px;
 }
-div.anythingSlider-polished .anythingControls li.prev a, div.anythingSlider-polished .anythingControls li.next a {
+.anythingSlider-polished .anythingControls li.prev a, .anythingSlider-polished .anythingControls li.next a {
 	color: #ddd;
 }
-div.anythingSlider-polished .anythingControls li.next a:hover, div.anythingSlider-polished .anythingControls li.prev a:hover {
+.anythingSlider-polished .anythingControls li.next a:hover, .anythingSlider-polished .anythingControls li.prev a:hover {
 	color: #000;
 }
 
@@ -206,9 +219,33 @@ div.anythingSlider-polished .anythingControls li.next a:hover, div.anythingSlide
   COMMON SLIDER STYLING
  ***********************/
 /* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
-div.anythingSlider-polished .arrow a span, div.anythingSlider-polished .anythingControls ul a span, div.anythingSlider-polished .start-stop span {
+.anythingSlider-polished .arrow a span, .anythingSlider-polished .anythingControls ul a span, .anythingSlider-polished .start-stop span {
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
 	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
+}
+/* AnythingSlider IE7 and older styling */
+.as-oldie div.anythingSlider .arrow {
+	margin: 0;
+}
+/* When using the navigationSize option, the side margins need to be zero
+   None of the navigation panels look good in IE7 now =( */
+.as-oldie div.anythingSlider .anythingControls {
+	margin: 0 0 0 30px;
+}
+}.as-oldie div.anythingSlider .anythingControls ul.thumbNav a {
+	margin: 0 0 0 2px;
+}
+.as-oldie div.anythingSlider .anythingControls .anythingNavWindow li {
+	padding: 3px 0 0 0;
+}
+.as-oldie div.anythingSlider .anythingControls {
+	display: block;
+	width: 95%; /* arbitrary percentage, adjust to fit your slider in IE7 */
+	margin: 0;
+}
+.as-oldie .anythingSlider-polished .anythingControls {
+	width: 90%;
+	margin-left: 0;
 }

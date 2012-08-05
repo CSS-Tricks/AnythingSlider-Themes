@@ -1,6 +1,7 @@
 /*
-	AnythingSlider v1.7+ themes
-	Default 2 theme - triangly
+	AnythingSlider v1.8+ themes
+	Default 2 theme - ugly triangly
+	by Rob Garrison (aka Mottie)
 */
 
 /****************************
@@ -16,9 +17,14 @@
 	overflow-x: hidden;
 }
 
-/* Opera width restriction */
+/******************
+  SET STYLING HERE
+ ******************
+ =================================
+ Default state (no keyboard focus)
+ ==================================*/
+
 .anythingBase {
-	max-width: 32766px;
 	background: transparent;
 	list-style: none;
 	position: absolute;
@@ -26,7 +32,7 @@
 	left: 0;
 	margin: 0;
 	padding: 0;
-	/* override the #slider overflow above, once the class is added */
+	/* override the #slider overflow above, once this class is added to #slider */
 	overflow: visible !important;
 }
 
@@ -34,14 +40,14 @@
  ACTIVE STATE (slider has keyboard focus)
  *************/
 /* slider window - top & bottom borders, active state */
-div.anythingSlider-default2.activeSlider .anythingWindow {
+.anythingSlider-default2.activeSlider .anythingWindow {
 	border-color: #999;
 }
-div.anythingSlider-default2.activeSlider .arrow a {
+.anythingSlider-default2.activeSlider .arrow a {
 	opacity: 0.90;
 	filter: alpha(opacity=90);
 }
-div.anythingSlider-default2.activeSlider .anythingControls {
+.anythingSlider-default2.activeSlider .anythingControls {
 	opacity: 0.90;
 	filter: alpha(opacity=90);
 }
@@ -50,29 +56,42 @@ div.anythingSlider-default2.activeSlider .anythingControls {
  DEFAULT STATE (no keyboard focus)
  *****************/
 /* Overall Wrapper */
-div.anythingSlider-default2 {
+.anythingSlider-default2 {
 	display: block;
 	position: relative;
 	margin: 0 auto;
 	padding: 0 19px; /* adjust left/right padding here to move arrows towards or away from the center */
 }
 
-/* Panels/Slides */
-.anythingBase .panel {
+/* all panels inside the slider; horizontal mode */
+.anythingSlider .panel {
 	background: transparent;
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-/* Vertical panels */
-.anythingBase .panel.vertical {
+/* vertical mode */
+.anythingSlider .vertical .panel {
 	float: none;
 }
 
+/* fade mode */
+.anythingSlider .fade .panel {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+/* fade mode active page - visible & on top */
+.anythingSlider .fade .activePage {
+	z-index: 0;
+}
+
 /* Slider window - top & bottom borders, default state */
-div.anythingSlider-default2 .anythingWindow {
+.anythingSlider-default2 .anythingWindow {
 	border-top: 3px solid #777;
 	border-bottom: 3px solid #777;
 	overflow: hidden;
@@ -81,19 +100,19 @@ div.anythingSlider-default2 .anythingWindow {
 	height: 100%;
 }
 /* Arrow buttons position */
-div.anythingSlider-default2 .arrow {
+.anythingSlider-default2 .arrow {
 	top: 50%;
 	position: absolute;
 	display: block;
 }
-div.anythingSlider-default2 span.back {
+.anythingSlider-default2 span.back {
 	left: 0;
 }
-div.anythingSlider-default2 span.forward {
+.anythingSlider-default2 span.forward {
 	right: 0;
 }
 /* Arrow buttons images */
-div.anythingSlider-default2 .arrow a {
+.anythingSlider-default2 .arrow a {
 	display: block;
 	background: transparent url(../images/default.png) no-repeat;
 	height: 56px;
@@ -105,33 +124,33 @@ div.anythingSlider-default2 .arrow a {
 	opacity: 0.70;
 	filter: alpha(opacity=70);
 }
-div.anythingSlider-default2 .arrow a:hover {
+.anythingSlider-default2 .arrow a:hover {
 	opacity: 0.90;
 	filter: alpha(opacity=90);
 }
-div.anythingSlider-default2 .back a {
+.anythingSlider-default2 .back a {
 	background-position: left top;
 }
-div.anythingSlider-default2 .forward a {
+.anythingSlider-default2 .forward a {
 	background-position: right top;
 }
-div.anythingSlider-default2 .back a:hover,
-div.anythingSlider-default2 .back a.hover {
+.anythingSlider-default2 .back a:hover,
+.anythingSlider-default2 .back a.hover {
 	background-position: left -56px;
 }
-div.anythingSlider-default2 .forward a:hover,
-div.anythingSlider-default2 .forward a.hover {
+.anythingSlider-default2 .forward a:hover,
+.anythingSlider-default2 .forward a.hover {
 	background-position: right -56px;
 }
 
 /* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
-div.anythingSlider-default2 .back.disabled,
-div.anythingSlider-default2 .forward.disabled {
+.anythingSlider-default2 .back.disabled,
+.anythingSlider-default2 .forward.disabled {
 	display: none;
 }
 
 /* Navigation tabs - Slider control block */
-div.anythingSlider-default2 .anythingControls {
+.anythingSlider-default2 .anythingControls {
 	outline: 0;
 	float: right;
 	position: absolute;
@@ -141,24 +160,24 @@ div.anythingSlider-default2 .anythingControls {
 	opacity: 0.70;
 	filter: alpha(opacity=70);
 }
-div.anythingSlider-default2 .anythingControls:hover {
+.anythingSlider-default2 .anythingControls:hover {
 	opacity: 0.90;
 	filter: alpha(opacity=90);
 }
 /* control list */
-div.anythingSlider-default2 .anythingControls ul {
+.anythingSlider-default2 .anythingControls ul {
 	float: left;
 	margin: 0;
 	padding: 0;
 	z-index: 100;
 }
 /* control tabs */
-div.anythingSlider-default2 .anythingControls ul li {
+.anythingSlider-default2 .anythingControls ul li {
 	display: block;
 	float: left;
 }
 /* control links */
-div.anythingSlider-default2 .anythingControls ul a {
+.anythingSlider-default2 .anythingControls ul a {
 	display: block;
 	background: transparent url(../images/default.png) no-repeat left -111px; /* default tab, active/inactive slider */
 	text-decoration: none;
@@ -169,23 +188,23 @@ div.anythingSlider-default2 .anythingControls ul a {
 	outline: 0;
 }
 /* control nav window (navigationSize = true) */
-div.anythingSlider-default2 .anythingControls .anythingNavWindow {
+.anythingSlider-default2 .anythingControls .anythingNavWindow {
 	overflow: hidden;
 	float: left;
 }
-div.anythingSlider-default2 .anythingControls ul a.hover,
-div.anythingSlider-default2 .anythingControls ul a:hover {
+.anythingSlider-default2 .anythingControls ul a.hover,
+.anythingSlider-default2 .anythingControls ul a:hover {
 	background-position: left -129px;
 }
-div.anythingSlider-default2 .anythingControls ul a.cur {
+.anythingSlider-default2 .anythingControls ul a.cur {
 	background-position: -18px -111px;
 }
-div.anythingSlider-default2 .anythingControls ul a.cur:hover {
+.anythingSlider-default2 .anythingControls ul a.cur:hover {
 	background-position: -18px -129px;
 }
 
 /* Start/stop button - stopped */
-div.anythingSlider-default2 .start-stop {
+.anythingSlider-default2 .start-stop {
 	background: transparent url(../images/default.png) no-repeat -37px -111px;
 	color: #ddd;
 	width: 18px;
@@ -197,29 +216,29 @@ div.anythingSlider-default2 .start-stop {
 	margin: 0 0 0 3px;
 }
 /* Start/stop button - stopped */
-div.anythingSlider-default2 .start-stop:hover,
-div.anythingSlider-default2 .start-stop.hover {
+.anythingSlider-default2 .start-stop:hover,
+.anythingSlider-default2 .start-stop.hover {
 	background-position: -37px -129px;
 }
 /* start/stop button - playing */
-div.anythingSlider-default2 .start-stop.playing {
+.anythingSlider-default2 .start-stop.playing {
 	background-position: -55px -111px;
 }
-div.anythingSlider-default2 .start-stop.playing:hover,
-div.anythingSlider-default2 .start-stop.playing.hover {
+.anythingSlider-default2 .start-stop.playing:hover,
+.anythingSlider-default2 .start-stop.playing.hover {
 	background-position: -55px -129px;
 }
 
 /* Navigation size window arrows */
-div.anythingSlider-default2 .anythingControls li.next a span, div.anythingSlider-default2 .anythingControls li.prev a span {
+.anythingSlider-default2 .anythingControls li.next a span, .anythingSlider-default2 .anythingControls li.prev a span {
 	font-size: 9px;
 	text-indent: 1px;
 	padding: 6px 0 0 5px;
 }
-div.anythingSlider-default2 .anythingControls li.prev a, div.anythingSlider-default2 .anythingControls li.next a {
+.anythingSlider-default2 .anythingControls li.prev a, .anythingSlider-default2 .anythingControls li.next a {
 	color: #ddd;
 }
-div.anythingSlider-default2 .anythingControls li.next a:hover, div.anythingSlider-default2 .anythingControls li.prev a:hover {
+.anythingSlider-default2 .anythingControls li.next a:hover, .anythingSlider-default2 .anythingControls li.prev a:hover {
 	color: #000;
 }
 
@@ -227,9 +246,33 @@ div.anythingSlider-default2 .anythingControls li.next a:hover, div.anythingSlide
   COMMON SLIDER STYLING
  ***********************/
 /* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
-div.anythingSlider-default2 .arrow a span, div.anythingSlider-default2 .anythingControls ul a span, div.anythingSlider-default2 .start-stop span {
+.anythingSlider-default2 .arrow a span, .anythingSlider-default2 .anythingControls ul a span, .anythingSlider-default2 .start-stop span {
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
 	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
+}
+/* AnythingSlider IE7 and older styling */
+.as-oldie div.anythingSlider .arrow {
+	margin: 0;
+}
+/* When using the navigationSize option, the side margins need to be zero
+   None of the navigation panels look good in IE7 now =( */
+.as-oldie div.anythingSlider .anythingControls {
+	margin: 0 0 0 30px;
+}
+}.as-oldie div.anythingSlider .anythingControls ul.thumbNav a {
+	margin: 0 0 0 2px;
+}
+.as-oldie div.anythingSlider .anythingControls .anythingNavWindow li {
+	padding: 3px 0 0 0;
+}
+.as-oldie div.anythingSlider .anythingControls {
+	display: block;
+	width: 95%; /* arbitrary percentage, adjust to fit your slider in IE7 */
+	margin: 0;
+}
+.as-oldie .anythingSlider-default2 .anythingControls {
+	width: 90%;
+	margin-left: 0;
 }

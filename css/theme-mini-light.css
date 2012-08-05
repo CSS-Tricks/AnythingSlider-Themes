@@ -1,6 +1,7 @@
 ﻿/*
 	AnythingSlider v1.7+ themes
 	Mini Light theme
+	by Rob Garrison (aka Mottie)
 */
 
 /****************************
@@ -18,7 +19,6 @@
 
 /* Opera width restriction */
 .anythingBase {
-	max-width: 32766px;
 	background: transparent;
 	list-style: none;
 	position: absolute;
@@ -33,11 +33,11 @@
 /*************
  ACTIVE STATE (slider has keyboard focus)
  *************/
-div.anythingSlider-mini-light.activeSlider .arrow a {
+.anythingSlider-mini-light.activeSlider .arrow a {
 	opacity: 0.80;
 	filter: alpha(opacity=80);
 }
-div.anythingSlider-mini-light.activeSlider .anythingControls {
+.anythingSlider-mini-light.activeSlider .anythingControls {
 	opacity: 0.80;
 	filter: alpha(opacity=80);
 }
@@ -46,29 +46,42 @@ div.anythingSlider-mini-light.activeSlider .anythingControls {
  DEFAULT STATE (no keyboard focus)
  *****************/
 /* Overall Wrapper */
-div.anythingSlider-mini-light {
+.anythingSlider-mini-light {
 	display: block;
 	position: relative;
 	margin: 0 auto;
 	padding: 0; /* adjust left/right padding here to move arrows towards or away from the center */
 }
 
-/* Panels/Slides */
-.anythingBase .panel {
+/* all panels inside the slider; horizontal mode */
+.anythingSlider .panel {
 	background: transparent;
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-/* Vertical panels */
-.anythingBase .panel.vertical {
+/* vertical mode */
+.anythingSlider .vertical .panel {
 	float: none;
 }
 
+/* fade mode */
+.anythingSlider .fade .panel {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+/* fade mode active page - visible & on top */
+.anythingSlider .fade .activePage {
+	z-index: 0;
+}
+
 /* Slider window - top & bottom borders, default state */
-div.anythingSlider-mini-light .anythingWindow {
+.anythingSlider-mini-light .anythingWindow {
 	border: 0;
 	overflow: hidden;
 	position: relative;
@@ -76,19 +89,19 @@ div.anythingSlider-mini-light .anythingWindow {
 	height: 100%;
 }
 /* Arrow buttons position */
-div.anythingSlider-mini-light .arrow {
+.anythingSlider-mini-light .arrow {
 	top: 50%;
 	position: absolute;
 	display: block;
 }
-div.anythingSlider-mini-light span.back {
+.anythingSlider-mini-light span.back {
 	left: 0;
 }
-div.anythingSlider-mini-light span.forward {
+.anythingSlider-mini-light span.forward {
 	right: 0;
 }
 /* Arrow buttons images */
-div.anythingSlider-mini-light .arrow a {
+.anythingSlider-mini-light .arrow a {
 	display: block;
 	background: transparent url(../images/mini-light.png) no-repeat;
 	height: 42px;
@@ -100,33 +113,33 @@ div.anythingSlider-mini-light .arrow a {
 	opacity: 0.50;
 	filter: alpha(opacity=50);
 }
-div.anythingSlider-mini-light .arrow a:hover {
+.anythingSlider-mini-light .arrow a:hover {
 	opacity: 0.80;
 	filter: alpha(opacity=80);
 }
-div.anythingSlider-mini-light .back a {
+.anythingSlider-mini-light .back a {
 	background-position: left top;
 }
-div.anythingSlider-mini-light .forward a {
+.anythingSlider-mini-light .forward a {
 	background-position: right top;
 }
-div.anythingSlider-mini-light .back a:hover,
-div.anythingSlider-mini-light .back a.hover {
+.anythingSlider-mini-light .back a:hover,
+.anythingSlider-mini-light .back a.hover {
 	background-position: left -43px;
 }
-div.anythingSlider-mini-light .forward a:hover,
-div.anythingSlider-mini-light .forward a.hover {
+.anythingSlider-mini-light .forward a:hover,
+.anythingSlider-mini-light .forward a.hover {
 	background-position: right -43px;
 }
 
 /* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
-div.anythingSlider-mini-light .back.disabled,
-div.anythingSlider-mini-light .forward.disabled {
+.anythingSlider-mini-light .back.disabled,
+.anythingSlider-mini-light .forward.disabled {
 	display: none;
 }
 
 /* Navigation tabs - Slider control block */
-div.anythingSlider-mini-light .anythingControls {
+.anythingSlider-mini-light .anythingControls {
 	outline: 0;
 	float: right;
 	position: absolute;
@@ -136,24 +149,24 @@ div.anythingSlider-mini-light .anythingControls {
 	opacity: 0.50;
 	filter: alpha(opacity=50);
 }
-div.anythingSlider-mini-light .anythingControls:hover {
+.anythingSlider-mini-light .anythingControls:hover {
 	opacity: 0.80;
 	filter: alpha(opacity=80);
 }
 /* control list */
-div.anythingSlider-mini-light .anythingControls ul {
+.anythingSlider-mini-light .anythingControls ul {
 	float: left;
 	margin: 0;
 	padding: 0;
 	z-index: 100;
 }
 /* control tabs */
-div.anythingSlider-mini-light .anythingControls ul li {
+.anythingSlider-mini-light .anythingControls ul li {
 	display: block;
 	float: left;
 }
 /* control links */
-div.anythingSlider-mini-light .anythingControls ul a {
+.anythingSlider-mini-light .anythingControls ul a {
 	display: block;
 	background: transparent url(../images/mini-light.png) no-repeat left -85px; /* default tab, active/inactive slider */
 	text-decoration: none;
@@ -164,23 +177,23 @@ div.anythingSlider-mini-light .anythingControls ul a {
 	outline: 0;
 }
 /* control nav window (navigationSize = true) */
-div.anythingSlider-mini-light .anythingControls .anythingNavWindow {
+.anythingSlider-mini-light .anythingControls .anythingNavWindow {
 	overflow: hidden;
 	float: left;
 }
-div.anythingSlider-mini-light .anythingControls ul a.hover,
-div.anythingSlider-mini-light .anythingControls ul a:hover {
+.anythingSlider-mini-light .anythingControls ul a.hover,
+.anythingSlider-mini-light .anythingControls ul a:hover {
 	background-position: left bottom;
 }
-div.anythingSlider-mini-light .anythingControls ul a.cur {
+.anythingSlider-mini-light .anythingControls ul a.cur {
 	background-position: -11px -85px;
 }
-div.anythingSlider-mini-light .anythingControls ul a.cur:hover {
+.anythingSlider-mini-light .anythingControls ul a.cur:hover {
 	background-position: -11px bottom;
 }
 
 /* Start/stop button - stopped */
-div.anythingSlider-mini-light .start-stop {
+.anythingSlider-mini-light .start-stop {
 	background: transparent url(../images/mini-light.png) no-repeat -22px -85px;
 	color: #ddd;
 	width: 11px;
@@ -191,29 +204,29 @@ div.anythingSlider-mini-light .start-stop {
 	outline: 0;
 }
 /* Start/stop button - stopped */
-div.anythingSlider-mini-light .start-stop:hover,
-div.anythingSlider-mini-light .start-stop.hover {
+.anythingSlider-mini-light .start-stop:hover,
+.anythingSlider-mini-light .start-stop.hover {
 	background-position: -22px bottom;
 }
 /* start/stop button - playing */
-div.anythingSlider-mini-light .start-stop.playing {
+.anythingSlider-mini-light .start-stop.playing {
 	background-position: right -85px;
 }
-div.anythingSlider-mini-light .start-stop.playing:hover,
-div.anythingSlider-mini-light .start-stop.playing.hover {
+.anythingSlider-mini-light .start-stop.playing:hover,
+.anythingSlider-mini-light .start-stop.playing.hover {
 	background-position: right bottom;
 }
 
 /* Navigation size window arrows */
-div.anythingSlider-mini-light .anythingControls li.next a span, div.anythingSlider-mini-light .anythingControls li.prev a span {
+.anythingSlider-mini-light .anythingControls li.next a span, .anythingSlider-mini-light .anythingControls li.prev a span {
 	text-indent: 1px;
 	padding: 4px 0 0 3px;
 	font-size: 8px;
 }
-div.anythingSlider-mini-light .anythingControls li.prev a, div.anythingSlider-mini-light .anythingControls li.next a {
+.anythingSlider-mini-light .anythingControls li.prev a, .anythingSlider-mini-light .anythingControls li.next a {
 	color: #ddd;
 }
-div.anythingSlider-mini-light .anythingControls li.next a:hover, div.anythingSlider-mini-light .anythingControls li.prev a:hover {
+.anythingSlider-mini-light .anythingControls li.next a:hover, .anythingSlider-mini-light .anythingControls li.prev a:hover {
 	color: #000;
 }
 
@@ -221,9 +234,30 @@ div.anythingSlider-mini-light .anythingControls li.next a:hover, div.anythingSli
   COMMON SLIDER STYLING
  ***********************/
 /* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
-div.anythingSlider-mini-light .arrow a span, div.anythingSlider-mini-light .anythingControls ul a span, div.anythingSlider-mini-light .start-stop span {
+.anythingSlider-mini-light .arrow a span, .anythingSlider-mini-light .anythingControls ul a span, .anythingSlider-mini-light .start-stop span {
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
 	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
+}
+
+/* AnythingSlider IE7 and older styling */
+.as-oldie div.anythingSlider .arrow {
+	margin: 0;
+}
+/* When using the navigationSize option, the side margins need to be zero
+   None of the navigation panels look good in IE7 now =( */
+.as-oldie div.anythingSlider .anythingControls {
+	margin: 0 0 0 30px;
+}
+}.as-oldie div.anythingSlider .anythingControls ul.thumbNav a {
+	margin: 0 0 0 2px;
+}
+.as-oldie div.anythingSlider .anythingControls .anythingNavWindow li {
+	padding: 3px 0 0 0;
+}
+.as-oldie div.anythingSlider .anythingControls {
+	display: block;
+	width: 95%; /* arbitrary percentage, adjust to fit your slider in IE7 */
+	margin: 0;
 }

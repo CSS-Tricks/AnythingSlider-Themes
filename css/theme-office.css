@@ -1,6 +1,7 @@
 ﻿/*
 	AnythingSlider v1.7+ themes
 	Office Supplies theme
+	by Rob Garrison (aka Mottie)
 */
 
 /****************************
@@ -18,7 +19,6 @@
 
 /* Opera width restriction */
 .anythingBase {
-	max-width: 32766px;
 	background: transparent;
 	list-style: none;
 	position: absolute;
@@ -34,35 +34,48 @@
  ACTIVE STATE (slider has keyboard focus)
  *************/
 /* slider window - top & bottom borders, active state */
-div.anythingSlider-office.activeSlider .anythingWindow {}
+.anythingSlider-office.activeSlider .anythingWindow {}
 
 /*****************
  DEFAULT STATE (no keyboard focus)
  *****************/
 /* Overall Wrapper */
-div.anythingSlider-office {
+.anythingSlider-office {
 	display: block;
 	position: relative;
 	margin: 0 auto;
 	padding: 0 16px; /* adjust left/right padding here to move arrows towards or away from the center */
 }
 
-/* Panels/Slides */
-.anythingBase .panel {
+/* all panels inside the slider; horizontal mode */
+.anythingSlider .panel {
 	background: transparent;
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-/* Vertical panels */
-.anythingBase .panel.vertical {
+/* vertical mode */
+.anythingSlider .vertical .panel {
 	float: none;
 }
 
+/* fade mode */
+.anythingSlider .fade .panel {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+/* fade mode active page - visible & on top */
+.anythingSlider .fade .activePage {
+	z-index: 0;
+}
+
 /* Slider window - top & bottom borders, default state */
-div.anythingSlider-office .anythingWindow {
+.anythingSlider-office .anythingWindow {
 	border: 0;
 	overflow: hidden;
 	position: relative;
@@ -70,19 +83,19 @@ div.anythingSlider-office .anythingWindow {
 	height: 100%;
 }
 /* Arrow buttons position */
-div.anythingSlider-office .arrow {
+.anythingSlider-office .arrow {
 	top: 50%;
 	position: absolute;
 	display: block;
 }
-div.anythingSlider-office span.back {
+.anythingSlider-office span.back {
 	left: 0;
 }
-div.anythingSlider-office span.forward {
+.anythingSlider-office span.forward {
 	right: 0;
 }
 /* Arrow buttons images */
-div.anythingSlider-office .arrow a {
+.anythingSlider-office .arrow a {
 	display: block;
 	background: transparent url(../images/office.png) no-repeat;
 	width: 90px;
@@ -92,29 +105,29 @@ div.anythingSlider-office .arrow a {
 	outline: 0;
 	margin: -22px 0 0; /* set to 1/2 height */
 }
-div.anythingSlider-office .back a {
+.anythingSlider-office .back a {
 	background-position: left top;
 }
-div.anythingSlider-office .forward a {
+.anythingSlider-office .forward a {
 	background-position: 1px -45px;
 }
-div.anythingSlider-office .back a:hover,
-div.anythingSlider-office .back a.hover {
+.anythingSlider-office .back a:hover,
+.anythingSlider-office .back a.hover {
 	background-position: left -90px;
 }
-div.anythingSlider-office .forward a:hover,
-div.anythingSlider-office .forward a.hover {
+.anythingSlider-office .forward a:hover,
+.anythingSlider-office .forward a.hover {
 	background-position: 1px -135px;
 }
 
 /* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
-div.anythingSlider-office .back.disabled,
-div.anythingSlider-office .forward.disabled {
+.anythingSlider-office .back.disabled,
+.anythingSlider-office .forward.disabled {
 	display: none;
 }
 
 /* Navigation tabs - Slider control block */
-div.anythingSlider-office .anythingControls {
+.anythingSlider-office .anythingControls {
 	outline: 0;
 	float: right;
 	position: absolute;
@@ -123,19 +136,19 @@ div.anythingSlider-office .anythingControls {
 	z-index: 100;
 }
 /* control list */
-div.anythingSlider-office .anythingControls ul {
+.anythingSlider-office .anythingControls ul {
 	float: left;
 	margin: 0;
 	padding: 0;
 	z-index: 100;
 }
 /* control tabs */
-div.anythingSlider-office .anythingControls ul li {
+.anythingSlider-office .anythingControls ul li {
 	display: block;
 	float: left;
 }
 /* control links */
-div.anythingSlider-office .anythingControls ul a {
+.anythingSlider-office .anythingControls ul a {
 	display: block;
 	background: transparent url(../images/office.png) no-repeat left -182px; /* default tab, active/inactive slider */
 	text-decoration: none;
@@ -146,23 +159,23 @@ div.anythingSlider-office .anythingControls ul a {
 	outline: 0;
 }
 /* control nav window (navigationSize = true) */
-div.anythingSlider-office .anythingControls .anythingNavWindow {
+.anythingSlider-office .anythingControls .anythingNavWindow {
 	overflow: hidden;
 	float: left;
 }
-div.anythingSlider-office .anythingControls ul a.hover,
-div.anythingSlider-office .anythingControls ul a:hover {
+.anythingSlider-office .anythingControls ul a.hover,
+.anythingSlider-office .anythingControls ul a:hover {
 	background-position: left -204px;
 }
-div.anythingSlider-office .anythingControls ul a.cur {
+.anythingSlider-office .anythingControls ul a.cur {
 	background-position: -23px -182px;
 }
-div.anythingSlider-office .anythingControls ul a.cur:hover {
+.anythingSlider-office .anythingControls ul a.cur:hover {
 	background-position: -23px -204px;
 }
 
 /* Start/stop button - stopped */
-div.anythingSlider-office .start-stop {
+.anythingSlider-office .start-stop {
 	background: transparent url(../images/office.png) no-repeat -67px -182px;
 	color: #ddd;
 	width: 22px;
@@ -174,28 +187,28 @@ div.anythingSlider-office .start-stop {
 	margin: 0 0 0 3px;
 }
 /* Start/stop button - stopped */
-div.anythingSlider-office .start-stop:hover,
-div.anythingSlider-office .start-stop.hover {
+.anythingSlider-office .start-stop:hover,
+.anythingSlider-office .start-stop.hover {
 	background-position: -67px -204px;
 }
 /* start/stop button - playing */
-div.anythingSlider-office .start-stop.playing {
+.anythingSlider-office .start-stop.playing {
 	background-position: -45px -182px;
 }
-div.anythingSlider-office .start-stop.playing:hover,
-div.anythingSlider-office .start-stop.playing.hover {
+.anythingSlider-office .start-stop.playing:hover,
+.anythingSlider-office .start-stop.playing.hover {
 	background-position: -45px -204px;
 }
 
 /* Navigation size window arrows */
-div.anythingSlider-office .anythingControls li.next a span, div.anythingSlider-office .anythingControls li.prev a span {
+.anythingSlider-office .anythingControls li.next a span, .anythingSlider-office .anythingControls li.prev a span {
 	text-indent: 1px;
 	padding: 8px 0 0 7px;
 }
-div.anythingSlider-office .anythingControls li.prev a, div.anythingSlider-office .anythingControls li.next a {
+.anythingSlider-office .anythingControls li.prev a, .anythingSlider-office .anythingControls li.next a {
 	color: #ddd;
 }
-div.anythingSlider-office .anythingControls li.next a:hover, div.anythingSlider-office .anythingControls li.prev a:hover {
+.anythingSlider-office .anythingControls li.next a:hover, .anythingSlider-office .anythingControls li.prev a:hover {
 	color: #000;
 }
 
@@ -203,9 +216,33 @@ div.anythingSlider-office .anythingControls li.next a:hover, div.anythingSlider-
   COMMON SLIDER STYLING
  ***********************/
 /* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
-div.anythingSlider-office .arrow a span, div.anythingSlider-office .anythingControls ul a span, div.anythingSlider-office .start-stop span {
+.anythingSlider-office .arrow a span, .anythingSlider-office .anythingControls ul a span, .anythingSlider-office .start-stop span {
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
 	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
+}
+/* AnythingSlider IE7 and older styling */
+.as-oldie div.anythingSlider .arrow {
+	margin: 0;
+}
+/* When using the navigationSize option, the side margins need to be zero
+   None of the navigation panels look good in IE7 now =( */
+.as-oldie div.anythingSlider .anythingControls {
+	margin: 0 0 0 30px;
+}
+}.as-oldie div.anythingSlider .anythingControls ul.thumbNav a {
+	margin: 0 0 0 2px;
+}
+.as-oldie div.anythingSlider .anythingControls .anythingNavWindow li {
+	padding: 3px 0 0 0;
+}
+.as-oldie div.anythingSlider .anythingControls {
+	display: block;
+	width: 95%; /* arbitrary percentage, adjust to fit your slider in IE7 */
+	margin: 0;
+}
+.as-oldie .anythingSlider-office .anythingControls {
+	width: 90%;
+	margin-left: 0;
 }

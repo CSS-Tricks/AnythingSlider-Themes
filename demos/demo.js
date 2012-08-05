@@ -2,6 +2,7 @@
 
 	// Set up Slider
 	$('#slider').anythingSlider({
+		mode: 'v',
 		theme : 'default1',
 //		navigationSize: 4,
 		navigationFormatter : function(i){

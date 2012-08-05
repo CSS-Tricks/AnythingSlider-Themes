@@ -1,4 +1,4 @@
-﻿/* wrapper backgrounds */
+﻿/* wrapper backgrounds by Rob Garrison (aka Mottie) */
 #wrapper {
 	width: 800px;
 	height: 390px;
@@ -81,6 +81,11 @@
 	background-image: repeating-radial-gradient(50% 50%, circle cover, rgba(117, 117, 117, 0.4), rgba(0, 0, 0, 0.4) 100%), url(../images/bkgd-carbon-fiber.gif);
 }
 
+.as-oldie #wrapper.carbonfiber {
+	border: rgb(22,22,22) 2px solid;
+	background-image: url(../images/bkgd-carbon-fiber.gif);
+}
+
 /*************
  Leather image
  *************/
@@ -89,6 +94,11 @@
 	background-image: -moz-repeating-radial-gradient(50% 50%, circle cover, rgba(117, 117, 117, 0.4), rgba(0, 0, 0, 0.4) 100%), url(../images/bkgd-leather.jpg);
 	background-image: -webkit-repeating-radial-gradient(50% 50%, circle cover, rgba(117, 117, 117, 0.4), rgba(0, 0, 0, 0.4) 100%), url(../images/bkgd-leather.jpg);
 	background-image: repeating-radial-gradient(50% 50%, circle cover, rgba(117, 117, 117, 0.4), rgba(0, 0, 0, 0.4) 100%), url(../images/bkgd-leather.jpg);
+}
+
+.as-oldie #wrapper.leather {
+	background-color: rgb(117, 117, 117);
+	background-image: url(../images/bkgd-leather.jpg);
 }
 
 /*************
@@ -113,10 +123,18 @@
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
 }
 
+.as-oldie #wrapper.light-wood {
+	background-image: url(../images/bkgd-wood2.jpg);
+}
+
 /*************
  Noise overlay
  *************/
 #wrapper.noise {
 	background-image: url(../images/bkgd-noise.png);
 	border: rgba(128,128,128,0.1) 1px solid;
+}
+
+.as-oldie #wrapper.noise {
+	border: rgb(128,128,128) 1px solid;
 }
