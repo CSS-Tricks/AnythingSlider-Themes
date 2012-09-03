@@ -1,4 +1,4 @@
-﻿These are some additional themes I put together for [AnythingSlider](http://proloser.github.com/AnythingSlider/)
+﻿These are some additional themes I put together for [AnythingSlider](http://css-tricks.github.com/AnythingSlider/)
 
 See them on the [AnythingSlider Theme Demo Page](http://css-tricks.github.com/AnythingSlider-Themes/)
 
@@ -81,7 +81,7 @@ See them on the [AnythingSlider Theme Demo Page](http://css-tricks.github.com/An
 
 ### Version 1.3
 
-* Updated css files to prevent problems with using the navigation in IE8, as per AnythingSlider [issue #206](https://github.com/ProLoser/AnythingSlider/issues/206). Even though it doesn't appear to be a problem, better to make the change anyway :P
+* Updated css files to prevent problems with using the navigation in IE8, as per AnythingSlider [issue #206](https://github.com/CSS-Tricks/AnythingSlider/issues/206). Even though it doesn't appear to be a problem, better to make the change anyway :P
 
 ### Version 1.2
 
