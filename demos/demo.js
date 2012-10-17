@@ -40,6 +40,7 @@
 			[ 'polished', 'Polished' ],
 			[ 'ribbon', 'Ribbon' ],
 			[ 'shiny', 'Shiny' ],
+			[ 'simple', 'Simple' ],
 			[ 'tabs-light', 'Tabs Light' ],
 			[ 'tabs-dark', 'Tabs Dark' ]
 		];
