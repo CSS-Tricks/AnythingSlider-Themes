@@ -63,6 +63,7 @@ See them on the [AnythingSlider Theme Demo Page](http://css-tricks.github.com/An
 * **Polished** - I should have named this brushed aluminum, but the name was just too long and I like being lazy :P
 * **Ribbon** - Yeah, I know it's a metallic ribbon... if I was better at photoshop, I'd make it more silky, oh well.
 * **Shiny** - I like shiny stuff :P
+* **Simple** - Thanks to [larmarange](https://github.com/larmarange) for contributing this theme!
 * **Tabs Light** - I really like this theme, but doesn't work too well when the slider's `navigationSize` option is set... the tabs don't fit inside of the navigation block because of the absolutely positioned span it needs. I'll need to modify the Slider code itself to account for this - when I get a chance.
 * **Tabs Dark** - This theme has the same problem when setting the `navigationSize` option.
 
@@ -72,6 +73,10 @@ See them on the [AnythingSlider Theme Demo Page](http://css-tricks.github.com/An
 * Or you could just email me the files and I'll add it.
 
 ## Change Log
+
+### Version 1.4.1
+
+* Added Simple theme thanks to [larmarange](https://github.com/larmarange)!
 
 ### Version 1.4
 
