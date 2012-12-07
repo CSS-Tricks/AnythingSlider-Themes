@@ -74,6 +74,10 @@ See them on the [AnythingSlider Theme Demo Page](http://css-tricks.github.com/An
 
 ## Change Log
 
+### Version 1.4.2
+
+* Set all panel z-indexes to zero, active page to one to fix AnythingSlider [issue #447](https://github.com/CSS-Tricks/AnythingSlider/issues/447).
+
 ### Version 1.4.1
 
 * Added Simple theme thanks to [larmarange](https://github.com/larmarange)!
